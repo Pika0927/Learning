@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBindingMethod"
+        xmlns:views="clr-namespace:WpfBindingMethod.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel Margin="0,20">
+        <ComboBox x:Name="SelectUserControl" SelectionChanged="NewUserControl"></ComboBox>
+        <ContentControl x:Name="CC1" Grid.Column="1" HorizontalAlignment="Left"></ContentControl>
+    </StackPanel>
+    
+    
 </Window>

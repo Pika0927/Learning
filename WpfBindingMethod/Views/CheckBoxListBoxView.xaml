@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="WpfBindingMethod.Views.CheckBoxListBoxView"
+             x:Name="myU"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfBindingMethod.Views"
+             xmlns:vm="clr-namespace:WpfBindingMethod.ViewModels"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d"
+             
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:CheckBoxListBoxViewModel/>
+    </UserControl.DataContext>
+
+    <StackPanel Width="350">
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Content="CB1" IsChecked="{Binding CB1Check}"></CheckBox>
+            <CheckBox Content="CB2" IsChecked="{Binding CB2Check}"></CheckBox>
+            <CheckBox Content="CB3" IsChecked="{Binding CB3Check}"></CheckBox>
+            <CheckBox Content="CB4" IsChecked="{Binding CB4Check}"></CheckBox>
+            <CheckBox Content="CB5" IsChecked="{Binding CB5Check}"></CheckBox>
+            <TextBlock Margin="5,0" VerticalAlignment="Center" Text="Index : "></TextBlock>
+            <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding SelectedIndex}"></TextBlock>
+            <Button Content="Add Item" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding Button1Click}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ListBox ItemsSource="{Binding ListBoxSource1}" SelectedIndex="{Binding SelectedIndex}"  Height="100" Width="175">
+              
+            </ListBox>
+            <ListBox ItemsSource="{Binding ListBoxSource2,UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding SelectedIndex}"  Height="100" Width="175">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Index}" FontSize="12"/>
+                            <TextBlock Margin="5,0" Text="{Binding Name}" FontSize="12"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" >
+            <ListBox ItemsSource="{Binding ListBoxSource3}" SelectedIndex="{Binding SelectedIndex}"  Height="47" Width="266" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Checked">
+                                        <i:InvokeCommandAction Command="{Binding CheckChange}"/>
+                                    </i:EventTrigger>
+                                    
+                                    <i:EventTrigger EventName="Unchecked">
+                                        <i:InvokeCommandAction Command="{Binding CheckChange}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </CheckBox>
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <TextBlock Text="{Binding TestMessage}"></TextBlock>
+        </StackPanel>
+    </StackPanel>
+
+</UserControl>

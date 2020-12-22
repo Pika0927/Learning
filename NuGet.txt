@@ -1,0 +1,26 @@
+ install Expression.Blend
+
+xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+
+ <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="">
+                        <i:InvokeCommandAction Command="{Binding }"/>
+                    </i:EventTrigger>
+</i:Interaction.Triggers>
+
+
+ public ICommand  { get; set; }
+          
+        public void _(object param)
+        {
+            Count++;
+            
+        }
+¡@¡@private bool Can(object param)
+        {
+            return true;
+        }
+
+//in viewmodel create
+Button1Click = new DelegateCommand(_Button1Click, CanButton1Click);
+

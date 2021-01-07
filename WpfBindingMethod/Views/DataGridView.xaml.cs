@@ -19,9 +19,18 @@ namespace WpfBindingMethod.Views
     /// </summary>
     public partial class DataGridView : UserControl
     {
+        List<string> source = new List<string>() {"1","2","3", "4", "5", "6", "7", "8", "9", "10" };
         public DataGridView()
         {
             InitializeComponent();
+            IC1.ItemsSource = source;
+            SV1.ScrollToEnd();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SV1.ScrollToVerticalOffset(0);
+
         }
     }
 }

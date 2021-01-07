@@ -8,6 +8,23 @@ using System.Collections.ObjectModel;
 
 namespace WpfBindingMethod.ViewModels
 {
+    class MyData : ViewModelBase
+    {
+        private string _Item;
+
+        public string Item
+        {
+            get { return _Item; }
+            set { _Item = value;
+                OnPropertyChanged();
+            }
+        }
+        public MyData(string _item)
+        {
+            Item = _item;
+        }
+
+    }
     class ComboBoxViewModel : ViewModelBase
     {
         #region Useful word and key
@@ -23,15 +40,27 @@ namespace WpfBindingMethod.ViewModels
         #endregion
 
         #region Binding Data
-        public ObservableCollection<string> _ItemList = new ObservableCollection<string>();
-        public ObservableCollection<string> ItemList
+        public ObservableCollection<string> _ItemList2 = new ObservableCollection<string>();
+        public ObservableCollection<string> ItemList2
         {
             get
             {            
-                return _ItemList;
+                return _ItemList2;
             }
         }
-
+        public List<MyData> _ItemList = new List<MyData>();
+        public List<MyData> ItemList
+        {
+            get
+            {
+                return _ItemList;
+            }
+            set
+            {
+                _ItemList = value;
+                OnPropertyChanged();
+            }
+        }
         private int _SelectIndex;
 
         public int SelectIndex
@@ -87,17 +116,26 @@ namespace WpfBindingMethod.ViewModels
             return true;
         }
         #endregion
+        public ICommand Button1Click { get; set; }
 
-
+        private bool CanButton1Click(object param)
+        {
+            return true;
+        }
+        public void _Button1Click(object param)
+        {
+            ItemList.Add(new MyData("new"));
+        }
         #endregion
+
 
         public ComboBoxViewModel()
         {
             for (int i = 0; i < 10; i++)
             {
-                ItemList.Add(i.ToString());
+                ItemList.Add(new MyData(i.ToString()));
             }
-            SelectItem = ItemList[0];
+            Button1Click = new DelegateCommand(_Button1Click, CanButton1Click);
 
         }
     }

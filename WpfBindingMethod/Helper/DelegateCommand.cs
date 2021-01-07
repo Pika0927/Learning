@@ -29,7 +29,6 @@ namespace SoraMVVM.Helper
                     CanExecuteChanged(this, new EventArgs());
                 }
             }
-
             return canExecuteCache;
         }
 

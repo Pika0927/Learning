@@ -15,5 +15,6 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
+        <TextBlock Text="{Binding Text}"></TextBlock>
     </Grid>
 </UserControl>

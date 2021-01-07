@@ -15,6 +15,21 @@
         <ComboBox ItemsSource="{Binding ItemList}" SelectedIndex="{Binding SelectIndex}" SelectedItem="{Binding SelectItem}" Width="100">
             
         </ComboBox>
+        <ItemsControl ItemsSource="{Binding ItemList}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Item}"></TextBlock>
+                </DataTemplate>
+
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
         <TextBlock Text="{Binding Text1}"></TextBlock>
+        <Button Width="100" Content="Additem">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding Button1Click}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
     </StackPanel>
 </UserControl>

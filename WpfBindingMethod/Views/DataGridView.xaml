@@ -37,5 +37,16 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
+        <Button Content="Top" Click="Button_Click">
+            
+        </Button>
+        <DockPanel  Height="50">
+            <ScrollViewer x:Name="SV1">
+                <ItemsControl x:Name="IC1">
+                    
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
+        
     </StackPanel>
 </UserControl>

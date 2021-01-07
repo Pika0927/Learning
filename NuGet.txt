@@ -13,7 +13,7 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
           
         public void _(object param)
         {
-            Count++;
+          
             
         }
 ¡@¡@private bool Can(object param)

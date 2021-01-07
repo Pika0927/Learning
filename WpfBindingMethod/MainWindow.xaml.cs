@@ -34,6 +34,7 @@ namespace WpfBindingMethod
         private DelegateCloseButtonViewModel DelegateCloseButtonViewModel = new DelegateCloseButtonViewModel();
         private DelegateCloseButtonView DelegateCloseButtonView = new DelegateCloseButtonView();
         private DataGridView DataGridView = new DataGridView();
+        private ViewModelFirst ViewModelFirstViewModel = new ViewModelFirst();
         public MainWindow()
         {
             InitializeComponent();
@@ -42,10 +43,13 @@ namespace WpfBindingMethod
             SelectUserControl.Items.Add("CheckBoxListBox");
             SelectUserControl.Items.Add("Picture");
             SelectUserControl.Items.Add("RadioButton");
-            SelectUserControl.Items.Add("CheckBoxListBox");         
+            SelectUserControl.Items.Add("ComBoBoxListBox");         
             SelectUserControl.Items.Add("DelegateCloseButton Method1");
             SelectUserControl.Items.Add("DelegateCloseButton Method2");
             SelectUserControl.Items.Add("DataGridView");
+            SelectUserControl.Items.Add("ViewModelFirst");
+
+            
 
             SelectUserControl.SelectedIndex = 7;
         }
@@ -99,6 +103,9 @@ namespace WpfBindingMethod
                     break;
                 case 7:
                     CC1.Content = DataGridView;
+                    break;
+                case 8:
+                    CC1.Content = ViewModelFirstViewModel.View;
                     break;
                 default:
                     break;

@@ -25,6 +25,13 @@ namespace WpfBindingMethod.ViewModels
         #endregion
 
         #region Binding Data
+        private string _Text;
+
+        public string Text
+        {
+            get { return _Text; }
+            set { _Text = value; }
+        }
 
         #endregion
 
@@ -70,6 +77,7 @@ namespace WpfBindingMethod.ViewModels
             {
                 return;
             };
+            Text = "123";
           
         }
         private void BaseEvent()

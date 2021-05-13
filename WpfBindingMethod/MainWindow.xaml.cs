@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using WpfBindingMethod.Views;
 using WpfBindingMethod.ViewModels;
+using System.Windows.Interop;
+using System.Runtime.InteropServices;
 
 namespace WpfBindingMethod
 {
@@ -27,6 +29,7 @@ namespace WpfBindingMethod
         public object ViewModel;
 
         private ButtonTextboxTextBlockView ButtonTextboxTextBlockView = new ButtonTextboxTextBlockView();
+        private ButtonTextboxTextBlockViewModel ButtonTextboxTextBlock = new ButtonTextboxTextBlockViewModel();
         private CheckBoxListBoxView CheckBoxListBoxView = new CheckBoxListBoxView();
         private PictureView PictureView = new PictureView();
         private ComboBoxView ComboBoxView = new ComboBoxView();
@@ -35,6 +38,29 @@ namespace WpfBindingMethod
         private DelegateCloseButtonView DelegateCloseButtonView = new DelegateCloseButtonView();
         private DataGridView DataGridView = new DataGridView();
         private ViewModelFirst ViewModelFirstViewModel = new ViewModelFirst();
+        private MoveObjectViewModel MoveObject = new MoveObjectViewModel();
+        private ConverterTestViewModel ConverterTest = new ConverterTestViewModel();
+        private ColorPickerViewModel ColorPickerTest = new ColorPickerViewModel();
+        private MyFavoriteViewModel MyFavorite = new MyFavoriteViewModel();
+        private SimulSendKeys SendKey = new SimulSendKeys();
+        private ListMouseEvent ListMouseEvent = new ListMouseEvent();
+        private DsMySqlTest DsMySqlTest = new DsMySqlTest();
+        private const int WsExNoactivate = 0x08000000;
+        private const int GwlExstyle = -20;
+        
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern int GetWindowLong(IntPtr hwnd, int index);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+            var interopHelper = new WindowInteropHelper(this);
+            var exStyle = GetWindowLong(interopHelper.Handle, GwlExstyle);
+            SetWindowLong(interopHelper.Handle, GwlExstyle, exStyle | WsExNoactivate);
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -48,10 +74,14 @@ namespace WpfBindingMethod
             SelectUserControl.Items.Add("DelegateCloseButton Method2");
             SelectUserControl.Items.Add("DataGridView");
             SelectUserControl.Items.Add("ViewModelFirst");
-
-            
-
-            SelectUserControl.SelectedIndex = 7;
+            SelectUserControl.Items.Add("MoveObject");
+            SelectUserControl.Items.Add("ConverterTest");
+            SelectUserControl.Items.Add("ColorPickerTest");
+            SelectUserControl.Items.Add("MyFavorite");
+            SelectUserControl.Items.Add("SendKey");
+            SelectUserControl.Items.Add("ListMouseEvent");
+            SelectUserControl.Items.Add("DsMySqlTest");
+            SelectUserControl.SelectedIndex = 15;
         }
 
         private void NewUserControl(object sender, SelectionChangedEventArgs e)
@@ -59,7 +89,7 @@ namespace WpfBindingMethod
             switch (SelectUserControl.SelectedIndex)
             {
                 case 0:
-                    CC1.Content =ButtonTextboxTextBlockView;
+                    CC1.Content = ButtonTextboxTextBlock.View;
                     break;
                 case 1:
                     CC1.Content = CheckBoxListBoxView;
@@ -106,6 +136,27 @@ namespace WpfBindingMethod
                     break;
                 case 8:
                     CC1.Content = ViewModelFirstViewModel.View;
+                    break;
+                case 9:
+                    CC1.Content = MoveObject.View;
+                    break;
+                case 10:
+                    CC1.Content = ConverterTest.View;
+                    break;
+                case 11:
+                    CC1.Content = ColorPickerTest.View;
+                    break;
+                case 12:
+                    CC1.Content = MyFavorite.View;
+                    break;
+                case 13:
+                    CC1.Content = SendKey;
+                    break;
+                case 14:
+                    CC1.Content = ListMouseEvent;
+                    break;
+                case 15:
+                    CC1.Content = DsMySqlTest;
                     break;
                 default:
                     break;

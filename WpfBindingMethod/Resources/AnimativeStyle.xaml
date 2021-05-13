@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfBindingMethod.Resources"
+                    xmlns:cvr="clr-namespace:WpfBindingMethod.Converter">
+    <cvr:CirPointConverter x:Key="CirPointCvr"></cvr:CirPointConverter>
+    <cvr:CirPointConverter2 x:Key="CirPointCvr2"></cvr:CirPointConverter2>
+    
+    <Style x:Key="LabelStyle1" TargetType="{x:Type Label}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Grid>
+                        <Path Data="M240.5,0.5 L245.5,0.5 245.5,22.5 240.5,22.5 z M225.5,0.5 L236.5,0.5 236.5,22.5 225.5,22.5 z M210.5,0.5 L221.5,0.5 221.5,22.5 210.5,22.5 z M195.5,0.5 L206.5,0.5 206.5,22.5 195.5,22.5 z M180.5,0.5 L191.5,0.5 191.5,22.5 180.5,22.5 z M165.5,0.5 L176.5,0.5 176.5,22.5 165.5,22.5 z M150.5,0.5 L161.5,0.5 161.5,22.5 150.5,22.5 z M135.5,0.5 L146.5,0.5 146.5,22.5 135.5,22.5 z M120.5,0.5 L131.5,0.5 131.5,22.5 120.5,22.5 z M105.5,0.5 L116.5,0.5 116.5,22.5 105.5,22.5 z M90.5,0.5 L101.5,0.5 101.5,22.5 90.5,22.5 z M75.5,0.5 L86.5,0.5 86.5,22.5 75.5,22.5 z M60.5,0.5 L71.5,0.5 71.5,22.5 60.5,22.5 z M45.5,0.5 L56.5,0.5 56.5,22.5 45.5,22.5 z M30.5,0.5 L41.5,0.5 41.5,22.5 30.5,22.5 z M15.5,0.5 L26.5,0.5 26.5,22.5 15.5,22.5 z M0.5,0.5 L11.5,0.5 11.5,22.5 0.5,22.5 z" 
+                                  Fill="{TemplateBinding Foreground}" Stretch="Fill" Stroke="Black"/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LabelStyle2" TargetType="{x:Type Label}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Grid>
+                        <Path Data="M0.98173073,43.110931 L10.884411,44.502663 C10.628449,46.323921 10.5,48.160843 10.5,50 L0.5,50 C0.50000015,47.695236 0.66096678,45.393269 0.98173073,43.110931 z M2.922702,34.703659 L12.433268,37.793827 C11.864935,39.542969 11.419458,41.329678 11.100094,43.140896 L1.2520159,41.404415 C1.6522374,39.134659 2.2104913,36.89563 2.922702,34.703659 z M6.2940947,26.761158 L15.123571,31.455874 C14.260135,33.079758 13.511171,34.761955 12.882141,36.490204 L3.4852149,33.070004 C4.2734939,30.904224 5.2120697,28.796152 6.2940947,26.761158 z M10.993467,19.524757 L18.873575,25.681372 C17.741278,27.13065 16.711577,28.657246 15.791997,30.25 L7.1317417,25.25 C8.2841255,23.254013 9.5745107,21.340937 10.993467,19.524757 z M16.878035,13.214331 L23.569342,20.645779 C22.20257,21.876421 20.923439,23.201006 19.741245,24.60989 L12.0808,18.182013 C13.562271,16.416464 15.165266,14.756516 16.878035,13.214331 z M23.768997,8.0216189 L29.06819,16.5021 C27.508482,17.476709 26.018772,18.559052 24.60989,19.741245 L18.182013,12.0808 C19.947575,10.599316 21.814432,9.2429648 23.768997,8.0216189 z M31.456974,4.1044002 L35.203041,13.376238 C33.497803,14.065201 31.842762,14.872415 30.25,15.791997 L25.25,7.1317435 C27.245974,5.9793654 29.320048,4.967775 31.456974,4.1044002 z M39.70837,1.581694 L41.787487,11.36317 C39.988518,11.745551 38.218453,12.253112 36.490204,12.882141 L33.070004,3.4852155 C35.23579,2.6969336 37.453957,2.0608829 39.70837,1.581694 z M50,0.5 L50,10.5 C47.700524,10.5 45.405441,10.700793 43.140896,11.100094 L41.404415,1.2520159 C44.242256,0.75163135 47.118382,0.5000039 50,0.5 z" 
+                                  Fill="{TemplateBinding Foreground}" Stretch="Fill" Stroke="Black"/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="local:CirProgressBarLabel">
+        <Setter Property="Point1" Value="0,1000"></Setter>
+        <Setter Property="Point2" Value="-1,0"></Setter>
+        <Setter Property="Point3" Value="1000,0"></Setter>
+        <Setter Property="Point4" Value="1000,1000"></Setter>
+        <Setter Property="Foreground" Value="LimeGreen"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:CirProgressBarLabel}" >
+                    <Grid x:Name="GirdP" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" >
+                        <Label  HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+                               VerticalAlignment="{TemplateBinding VerticalAlignment}" 
+               Style="{DynamicResource LabelStyle2}" Foreground="Transparent">
+                        </Label>
+                        <Grid Height="{TemplateBinding Height}" HorizontalAlignment="Left" 
+                               VerticalAlignment="Bottom" >
+                            <Grid.Clip>
+                                <GeometryGroup>
+                                    <PathGeometry>
+                                        <PathGeometry.Figures>
+                                            <PathFigureCollection>
+                                                <PathFigure IsClosed="True" StartPoint="{Binding Point1, RelativeSource={RelativeSource TemplatedParent}}">
+                                                    <PathFigure.Segments>
+                                                        <PathSegmentCollection>
+                                                            <LineSegment Point="-1,0"/>
+                                                            <LineSegment Point="{Binding Height,Converter={StaticResource CirPointCvr},ConverterParameter=0, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                            <LineSegment>
+                                                                <LineSegment.Point>
+                                                                    <MultiBinding Converter="{StaticResource CirPointCvr2}">
+                                                                        <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"></Binding>
+                                                                        <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"></Binding>
+                                                                    </MultiBinding>
+                                                                </LineSegment.Point>
+                                                            </LineSegment>
+                                                        </PathSegmentCollection>
+                                                    </PathFigure.Segments>
+                                                </PathFigure>
+                                            </PathFigureCollection>
+                                        </PathGeometry.Figures>
+                                    </PathGeometry>
+                                </GeometryGroup>
+                            </Grid.Clip>
+                            <Label Content=""  HorizontalAlignment="Left" 
+                               VerticalAlignment="Bottom" 
+               Style="{DynamicResource LabelStyle2}" Foreground="{TemplateBinding Foreground}" 
+                                   Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                            </Label>
+                        </Grid>
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RecProgressBarLabelStyle" TargetType="local:RecProgressBarLabel">
+        <Setter Property="BarLength" Value="1000"></Setter>
+        <Setter Property="Foreground" Value="LimeGreen"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:RecProgressBarLabel}" >
+                    <Grid Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" >
+                            <Grid Width="{TemplateBinding BarLength}" HorizontalAlignment="Left">
+                            <Label Content="" HorizontalAlignment="Left" Height="{TemplateBinding Height}" Style="{DynamicResource LabelStyle1}" 
+               VerticalAlignment="Top" Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}">
+                                </Label>
+                            </Grid>
+                        <Label Content="" HorizontalAlignment="Left" Height="{TemplateBinding Height}" Style="{DynamicResource LabelStyle1}" 
+               VerticalAlignment="Top" Width="{TemplateBinding Width}" Foreground="Transparent"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+   
+
+
+
+
+
+</ResourceDictionary>

@@ -1,0 +1,76 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfBindingMethod.Views"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="WpfBindingMethod.Views.BlendShape"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="ProgressBarStyle1" TargetType="{x:Type ProgressBar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Path HorizontalAlignment="Left" Height="100" Margin="0" Stroke="Black" VerticalAlignment="Top" Data="M50,0.5 C55.125893,0.50000054 60.069809,1.27913 64.719788,2.7254212 L65,2.8163958 64.123909,3.1008289 C44.573025,9.7168432 30.5,28.214957 30.5,50.000001 30.5,71.78505 44.573025,90.283158 64.123909,96.89917 L65,97.183602 64.719788,97.274582 C60.069809,98.720872 55.125893,99.500001 50,99.500001 22.661905,99.500001 0.5,77.338097 0.5,50.000001 0.5,22.661906 22.661905,0.50000054 50,0.5 z" Stretch="Fill" Width="65.5">
+            <Path.Fill>
+                <ImageBrush ImageSource="9846989469.jpg"/>
+            </Path.Fill>
+        </Path>
+        <Ellipse HorizontalAlignment="Left" Height="100" Margin="139.5,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="100">
+            <Ellipse.Effect>
+                <DropShadowEffect></DropShadowEffect>
+            </Ellipse.Effect>
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="下載.jpg"/>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <Grid Margin="300,0,0,0" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Path Data="M50,60.500001 C46.134007,60.5 43,63.634007 43,67.5 43,71.365993 46.134007,74.5 50,74.500001 53.865993,74.5 57,71.365993 57,67.5 57,63.634007 53.865993,60.5 50,60.500001 z M50,0.5 L64.850002,56.6 99.500004,99.5 50,86.299999 0.5,99.5 35.150001,56.6 z" HorizontalAlignment="Center" Height="100" Stretch="Fill" Stroke="Black" VerticalAlignment="Center" Width="100">
+                <Path.Fill>
+                    <ImageBrush ImageSource="Koutetu.png"/>
+                </Path.Fill>
+            </Path>
+
+        </Grid>
+        <Path HorizontalAlignment="Left" Height="25" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Data="M67.833001,0 L68.8375,0 243.167,0 243.167,24.999999 68.8375,24.999999 67.833001,24.999999 0,24.999999 C0,11.624352 28.92347,0.70210709 65.29513,0.032531521 L67.833001,0.0092248583 z" Margin="0,134,0,0" Stretch="Fill" Width="454.167" RenderTransformOrigin="0.5,0.5">
+            <Path.Fill>
+                <ImageBrush ImageSource="Koutetu.png">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="-1" ScaleX="1"/>
+                            <SkewTransform AngleY="0" AngleX="0" CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="0" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Path.Fill>
+        </Path>
+        <Path Data="M0,80.000001 L169.5,80.000001 169.5,143 0,143 z M95.943001,0 L169.5,0 169.5,63.000001 95.943001,63.000001 z M0,0 L73.556999,0 73.556999,63.000001 0,63.000001 z" Fill="Black" HorizontalAlignment="Left" Height="50" Margin="499.5,88.5,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="50"/>
+        <Path Data="M0,83.916084 L150,83.916084 150,150 0,150 z M84.905311,0 L150,0 150,26.999 84.917001,26.999 84.917001,39.999001 150,39.999001 150,66.08392 84.905311,66.08392 z M0,0 L65.094688,0 65.094688,66.08392 0,66.08392 z" Fill="Black" HorizontalAlignment="Left" Height="50" Margin="572.5,88.5,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="50"/>
+        <Grid Margin="0,200,695,145">
+            <Rectangle Fill="#FFFF4F28" HorizontalAlignment="Left" Height="50" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="50"/>
+            <Rectangle Fill="#FF00A3EB" HorizontalAlignment="Left" Height="50" Margin="0,55,0,0" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="50"/>
+            <Rectangle Fill="#FFFFBA35" HorizontalAlignment="Left" Height="50" Margin="55,55,0,0" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="50"/>
+            <Rectangle Fill="#FF79BB32" HorizontalAlignment="Left" Height="50" Margin="55,0,0,0" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="50"/>
+        </Grid>
+        <UniformGrid Margin="200,200,0,0" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Ellipse Fill="#FFFBFBF9" HorizontalAlignment="Left" Height="50" Margin="0" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="50"/>
+            <Ellipse Fill="#FF4C8BF4" HorizontalAlignment="Left" Height="46" Margin="-98,2,0,0" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="46"/>
+            <Path Data="M114,64 L103,-61" Fill="#FFDC4D41" HorizontalAlignment="Left" Height="125" Margin="103,0,-14,0" Stretch="Fill" Stroke="Black" StrokeThickness="0" Width="11"/>
+        </UniformGrid>
+        <ed:Arc ArcThickness="25" ArcThicknessUnit="Pixel" EndAngle="170" Fill="#FFFFCD42" HorizontalAlignment="Left" Height="100" Margin="175,175,0,0" Stretch="None" Stroke="Black" StrokeThickness="0" StartAngle="50" VerticalAlignment="Top" Width="100"/>
+        <ed:Arc ArcThickness="25" ArcThicknessUnit="Pixel" EndAngle="290" Fill="#FF17A05D" HorizontalAlignment="Left" Height="100" Margin="175,175,0,0" Stretch="None" Stroke="Black" StrokeThickness="0" StartAngle="170" VerticalAlignment="Top" Width="100"/>
+        <ed:Arc ArcThickness="25" ArcThicknessUnit="Pixel" EndAngle="50" Fill="#FFDC4D41" HorizontalAlignment="Left" Height="100" Margin="175,175,0,0" Stretch="None" Stroke="Black" StrokeThickness="0" StartAngle="290" VerticalAlignment="Top" Width="100"/>
+        <Path Data="M244.16667,209 L272.49967,209.5" Fill="#FFDC4D41" HorizontalAlignment="Left" Height="0.5" Margin="244.167,209,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="28.333"/>
+    </Grid> 
+</UserControl>

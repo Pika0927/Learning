@@ -12,7 +12,7 @@
         <vm:ComboBoxViewModel/>
     </UserControl.DataContext>
     <StackPanel>
-        <ComboBox ItemsSource="{Binding ItemList}" SelectedIndex="{Binding SelectIndex}" SelectedItem="{Binding SelectItem}" Width="100">
+        <ComboBox ItemsSource="{Binding ItemList2}" SelectedIndex="{Binding SelectIndex}" SelectedItem="{Binding SelectItem}" Width="100">
             
         </ComboBox>
         <ItemsControl ItemsSource="{Binding ItemList}">

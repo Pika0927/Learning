@@ -13,15 +13,17 @@ using System.Windows.Media.Imaging;
 
 namespace WpfBindingMethod.ViewModels
 {
-    class PictureViewModel:ViewModelBase
+    class PictureViewModel : ViewModelBase
     {
         #region Binding Data
-       
+
         private BitmapImage _Image1;
         public BitmapImage Image1
         {
             get { return _Image1; }
-            set { _Image1 = value;
+            set
+            {
+                _Image1 = value;
                 OnPropertyChanged();
             }
         }
@@ -57,9 +59,9 @@ namespace WpfBindingMethod.ViewModels
         public void _LeftPicture(object param)
         {
             PathIndex--;
-            Image1 = BitmapLoad(PicturePaths[PathIndex%7], 200);
-            Image2 = BitmapLoad(PicturePaths[(PathIndex + 1)%7], 200);
-            Image3 = BitmapLoad(PicturePaths[(PathIndex + 2)%7], 200);
+            Image1 = BitmapLoad(PicturePaths[PathIndex % 7], 200);
+            Image2 = BitmapLoad(PicturePaths[(PathIndex + 1) % 7], 200);
+            Image3 = BitmapLoad(PicturePaths[(PathIndex + 2) % 7], 200);
 
         }
         public ICommand RightPicture { get; set; }
@@ -83,7 +85,7 @@ namespace WpfBindingMethod.ViewModels
         {
             LeftPicture = new DelegateCommand(_LeftPicture, CanLeftPicture);
             RightPicture = new DelegateCommand(_RightPicture, CanRightPicture);
-            PicturePaths.Add(BasePath+"1-1.jpg");
+            PicturePaths.Add(BasePath + "1-1.jpg");
             PicturePaths.Add(BasePath + "1-2.jpg");
             PicturePaths.Add(BasePath + "1-3.jpg");
             PicturePaths.Add(BasePath + "1-4.jpg");
@@ -91,26 +93,23 @@ namespace WpfBindingMethod.ViewModels
             PicturePaths.Add(BasePath + "1-6.jpg");
             PicturePaths.Add(BasePath + "1-7.jpg");
             Image1 = BitmapLoad(PicturePaths[PathIndex], 200);
-            Image2 = BitmapLoad(PicturePaths[PathIndex+1], 200);
-            Image3 = BitmapLoad(PicturePaths[PathIndex+2], 200);
+            Image2 = BitmapLoad(PicturePaths[PathIndex + 1], 200);
+            Image3 = BitmapLoad(PicturePaths[PathIndex + 2], 200);
 
         }
-        public BitmapImage BitmapLoad(string path,int width)
+        public BitmapImage BitmapLoad(string path, int width)
         {
             BitmapImage Image = new BitmapImage();
             try
             {
-                
                 Image.BeginInit();
                 Image.UriSource = new Uri(path);
                 Image.CacheOption = BitmapCacheOption.OnLoad;
                 Image.DecodePixelWidth = width;
                 Image.EndInit();
-                
             }
             catch (Exception)
             {
-
             }
             return Image;
         }

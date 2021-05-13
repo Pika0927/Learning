@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="WpfBindingMethod.Views.MoveObject"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfBindingMethod.Views"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Canvas>
+        <Border Height="50" Width="100" Canvas.Left="{Binding BX}" Canvas.Top="{Binding BY}" Background="Black"></Border>
+        <StackPanel>
+            <TextBlock Text="{Binding TextBlock1Text}"></TextBlock>
+            <TextBlock x:Name="GX" Text="{Binding MyProperty}"></TextBlock>
+            <TextBlock x:Name="GY" Text="{Binding GridY}"></TextBlock>
+            <TextBlock x:Name="AquaX" Text="{Binding ElementName=AquaBlock, Path=RenderTransform.Value.OffsetX}" />
+            <TextBlock x:Name="AquaY" Text="{Binding ElementName=AquaBlock, Path=RenderTransform.Value.OffsetY}" />
+        </StackPanel>
+        <Grid x:Name="AquaBlock" Width="50" Height="50" >
+            <Grid.RenderTransform>
+                <MatrixTransform x:Name="MT1">
+                </MatrixTransform>
+            </Grid.RenderTransform>
+            <i:Interaction.Behaviors>
+                <ei:MouseDragElementBehavior/>
+            </i:Interaction.Behaviors>
+            <Border  Width="50" Height="50" CornerRadius="10" Background="Aqua"></Border>
+        </Grid>
+        <Grid Height="50" Width="50" Name="myGrid" MouseLeftButtonDown="grid_MouseLeftButtonDown" MouseLeftButtonUp="
+    grid_MouseLeftButtonUp" MouseMove="grid_MouseMove">
+            <Ellipse Fill="Yellow" Stroke="Blue" Height="50" Width="50" HorizontalAlignment="Left"></Ellipse>
+            <TextBlock Text="5" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="tt" />
+            </Grid.RenderTransform>
+        </Grid>
+        <Grid Height="50" Width="50" Name="myGrid2" MouseLeftButtonDown="GridMouseLeftButtonDown" MouseLeftButtonUp="
+    GridMouseLeftButtonUp" MouseMove="GridMouseMove">
+            <Ellipse Fill="Pink" Stroke="Blue" Height="50" Width="50" HorizontalAlignment="Left"></Ellipse>
+            <TextBlock Text="5" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="tt2" />
+            </Grid.RenderTransform>
+        </Grid>
+    </Canvas>
+</UserControl>

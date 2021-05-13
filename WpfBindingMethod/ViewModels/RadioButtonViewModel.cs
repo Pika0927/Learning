@@ -36,7 +36,9 @@ namespace WpfBindingMethod.ViewModels
         public bool RBCheck1
         {
             get { return _RBCheck1; }
-            set { _RBCheck1 = value;
+            set
+            {
+                _RBCheck1 = value;
                 OnPropertyChanged();
             }
         }
@@ -45,7 +47,9 @@ namespace WpfBindingMethod.ViewModels
         public bool RBCheck2
         {
             get { return _RBCheck2; }
-            set { _RBCheck2 = value;
+            set
+            {
+                _RBCheck2 = value;
                 OnPropertyChanged();
             }
         }
@@ -54,7 +58,9 @@ namespace WpfBindingMethod.ViewModels
         public bool RBCheck3
         {
             get { return _RBCheck3; }
-            set { _RBCheck3 = value;
+            set
+            {
+                _RBCheck3 = value;
                 OnPropertyChanged();
             }
         }
@@ -63,7 +69,9 @@ namespace WpfBindingMethod.ViewModels
         public bool RBCheck4
         {
             get { return _RBCheck4; }
-            set { _RBCheck4 = value;
+            set
+            {
+                _RBCheck4 = value;
                 OnPropertyChanged();
             }
         }
@@ -73,7 +81,7 @@ namespace WpfBindingMethod.ViewModels
         public ObservableCollection<MyRadioButton> ListBoxSource1
         {
             get { return _ListBoxSource1; }
-           
+
         }
 
         #endregion
@@ -122,11 +130,11 @@ namespace WpfBindingMethod.ViewModels
             ListBoxSource1.Add(new MyRadioButton(true));
             for (int i = 0; i < 3; i++)
             {
-                ListBoxSource1.Add(new MyRadioButton(false));              
+                ListBoxSource1.Add(new MyRadioButton(false));
             }
-            
-            
-            Move = new DelegateCommand(_Move,CanExecute);
+
+
+            Move = new DelegateCommand(_Move, CanExecute);
         }
     }
 }

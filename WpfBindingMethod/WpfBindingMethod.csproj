@@ -52,6 +52,18 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ds_API_SqlClass">
+      <HintPath>..\..\0MakeProject\MySQL\ds_API_SqlClass.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\0MakeProject\DLL\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\0MakeProject\MySQL\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -70,31 +82,65 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\CirPointConverter.cs" />
+    <Compile Include="Converter\ColorBrushConverter.cs" />
+    <Compile Include="Converter\TextBlockColorConverter.cs" />
+    <Compile Include="Converter\TransformConverter.cs" />
     <Compile Include="Helper\DelegateCommand.cs" />
     <Compile Include="Helper\ViewModelBase.cs" />
+    <Compile Include="Resources\AnimativeControl.cs" />
     <Compile Include="ViewModels\ButtonTextboxTextBlockViewModel.cs" />
     <Compile Include="ViewModels\CheckBoxListBoxViewModel.cs" />
+    <Compile Include="ViewModels\ColorPickerViewModel.cs" />
+    <Compile Include="ViewModels\ConverterTestViewModel.cs" />
     <Compile Include="ViewModels\DataGridViewModel.cs" />
     <Compile Include="ViewModels\DelegateCloseButtonViewModel.cs" />
+    <Compile Include="ViewModels\MoveObjectViewModel.cs" />
+    <Compile Include="ViewModels\MyFavoriteViewModel.cs" />
     <Compile Include="ViewModels\RadioButtonViewModel.cs" />
     <Compile Include="ViewModels\ComboBoxViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelFirst.cs" />
+    <Compile Include="Views\BlendShape.xaml.cs">
+      <DependentUpon>BlendShape.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ButtonTextboxTextBlockView.xaml.cs">
       <DependentUpon>ButtonTextboxTextBlockView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CalculatorViewModel.cs" />
     <Compile Include="Views\CheckBoxListBoxView.xaml.cs">
       <DependentUpon>CheckBoxListBoxView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\PictureViewModel.cs" />
+    <Compile Include="Views\ColorPickerTest.xaml.cs">
+      <DependentUpon>ColorPickerTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ComboBoxView.xaml.cs">
       <DependentUpon>ComboBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConverterTest.xaml.cs">
+      <DependentUpon>ConverterTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DataGridView.xaml.cs">
       <DependentUpon>DataGridView.xaml</DependentUpon>
@@ -105,6 +151,18 @@
     <Compile Include="Views\DelegateCloseButtonViewMethod2.xaml.cs">
       <DependentUpon>DelegateCloseButtonViewMethod2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DsMySqlTest.xaml.cs">
+      <DependentUpon>DsMySqlTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListMouseEvent.xaml.cs">
+      <DependentUpon>ListMouseEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MoveObject.xaml.cs">
+      <DependentUpon>MoveObject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyFavorite.xaml.cs">
+      <DependentUpon>MyFavorite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PictureView.xaml.cs">
       <DependentUpon>PictureView.xaml</DependentUpon>
     </Compile>
@@ -112,6 +170,9 @@
       <DependentUpon>RadioButtonView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ScrollToControlAction.cs" />
+    <Compile Include="Views\SimulSendKeys.xaml.cs">
+      <DependentUpon>SimulSendKeys.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewModelFirstView.xaml.cs">
       <DependentUpon>ViewModelFirstView.xaml</DependentUpon>
     </Compile>
@@ -127,6 +188,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\AnimativeStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\MyFavoriteStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BlendShape.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ButtonTextboxTextBlockView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,7 +208,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ColorPickerTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ComboBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConverterTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,11 +232,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DsMySqlTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListMouseEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MoveObject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MyFavorite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PictureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RadioButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SimulSendKeys.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +291,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\9846989469.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Knief.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\google.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

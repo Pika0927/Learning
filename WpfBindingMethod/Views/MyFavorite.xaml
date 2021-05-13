@@ -1,0 +1,178 @@
+﻿<UserControl x:Class="WpfBindingMethod.Views.MyFavorite"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfBindingMethod.Views"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ie="http://schemas.microsoft.com/expression/2010/interactions"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WpfBindingMethod;component/Resources/MyFavoriteStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="MoveableLabel" TargetType="Label">
+                <Setter Property="Height" Value="48"></Setter>
+                <Setter Property="Width" Value="48"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Label">
+                            <Grid>
+                                <Label x:Name="Moveable" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Style="{StaticResource MoveableLabelBase}"
+                            Background="{TemplateBinding Background}" BorderThickness="0" RenderTransform="{TemplateBinding RenderTransform}">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
+                                            <ie:CallMethodAction TargetObject="{Binding}" MethodName="AddMouseLeftButtonDown"></ie:CallMethodAction>
+                                        </i:EventTrigger>
+                                        <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
+                                            <ie:CallMethodAction TargetObject="{Binding}" MethodName="AddMouseLeftButtonUp"></ie:CallMethodAction>
+                                        </i:EventTrigger>
+                                        <i:EventTrigger EventName="MouseMove">
+                                            <ie:CallMethodAction TargetObject="{Binding}" MethodName="AddMouseMove"></ie:CallMethodAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </Label>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="MyFavoriteLabel" TargetType="Label">
+                <Setter Property="Height" Value="48"></Setter>
+                <Setter Property="Width" Value="48"></Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Label">
+                            <Grid>
+                                <Label x:Name="Moveable" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Style="{StaticResource MoveableLabelBase}"
+                            Background="{TemplateBinding Background}" BorderThickness="0" RenderTransform="{TemplateBinding RenderTransform}">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                                            <ie:CallMethodAction TargetObject="{Binding}" MethodName="RemoveMouseLeftButtonDown"></ie:CallMethodAction>
+                                        </i:EventTrigger>
+                                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                                            <ie:CallMethodAction TargetObject="{Binding}" MethodName="RemoveMouseLeftButtonUp"></ie:CallMethodAction>
+                                        </i:EventTrigger>
+                                        <i:EventTrigger EventName="MouseMove">
+                                            <ie:CallMethodAction TargetObject="{Binding}" MethodName="RemoveMouseMove"></ie:CallMethodAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </Label>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel>
+        <StackPanel>
+            <TextBlock Text="{Binding ObjectPos}" Height="20"></TextBlock>
+        </StackPanel>
+        <Canvas>
+            
+            <!--Favorite1-->
+            <Grid Canvas.Left="0" Canvas.Top="100">
+                <Label Style="{StaticResource PlusIconLabel}"></Label>
+                <Label Style="{StaticResource MyFavoriteLabel}"  Background="{Binding FavoriteBrush1}">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+            </Grid>
+            
+            <!--Favorite2-->
+            <Grid Canvas.Left="70" Canvas.Top="100">
+                <Label Style="{StaticResource PlusIconLabel}"></Label>
+
+                <Label Style="{StaticResource MyFavoriteLabel}" Background="{Binding FavoriteBrush2}">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+            </Grid>
+            
+            <!--Favorite3-->
+            <Grid Canvas.Left="140" Canvas.Top="100">
+                <Label Style="{StaticResource PlusIconLabel}"></Label>
+                <Label Style="{StaticResource MyFavoriteLabel}" Background="{Binding FavoriteBrush3}">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+            </Grid>
+            
+            <!--Favorite4-->
+            <Grid Canvas.Left="210" Canvas.Top="100">
+                <Label Style="{StaticResource PlusIconLabel}"></Label>
+                <Label Style="{StaticResource MyFavoriteLabel}" Background="{Binding FavoriteBrush4}">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+
+            </Grid>
+            <!--Icon1-->
+            <Grid Canvas.Left="0" Canvas.Top="0">
+                <Label Style="{StaticResource MoveableLabelBase}" Background="Aqua"></Label>
+                <Label Style="{StaticResource MoveableLabel}" Background="Aqua">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+            </Grid>
+
+            <!--Icon2-->
+            <Grid Canvas.Left="70" Canvas.Top="0">
+                <Label Style="{StaticResource MoveableLabelBase}" Background="LimeGreen" ></Label>
+                <Label Style="{StaticResource MoveableLabel}" Background="LimeGreen">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+            </Grid>
+            
+            <!--Icon3-->
+            <Grid Canvas.Left="140" Canvas.Top="0">
+                <Label Style="{StaticResource MoveableLabelBase}" Background="Orange" ></Label>
+                <Label Style="{StaticResource MoveableLabel}" Background="Orange">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+            </Grid>
+            
+            <!--Icon4-->
+            <Grid Canvas.Left="210" Canvas.Top="0">
+                <Label Style="{StaticResource MoveableLabelBase}" Background="Purple" ></Label>
+                <Label Style="{StaticResource MoveableLabel}" Background="Purple">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+            </Grid>
+            <!--Icon5-->
+            <Grid Canvas.Left="280" Canvas.Top="0">
+                <Label Style="{StaticResource MoveableLabelBase}" Background="YellowGreen" ></Label>
+                <Label Style="{StaticResource MoveableLabel}" Background="YellowGreen">
+                    <Label.RenderTransform>
+                        <TranslateTransform></TranslateTransform>
+                    </Label.RenderTransform>
+                </Label>
+                <Border Style="{StaticResource GrayBorder}"></Border>
+            </Grid>
+        </Canvas>
+        
+    </StackPanel>
+</UserControl>

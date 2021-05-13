@@ -6,11 +6,13 @@
         xmlns:local="clr-namespace:WpfBindingMethod"
         xmlns:views="clr-namespace:WpfBindingMethod.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <StackPanel Margin="0,20">
-        <ComboBox x:Name="SelectUserControl" SelectionChanged="NewUserControl"></ComboBox>
-        <ContentControl x:Name="CC1" Grid.Column="1" HorizontalAlignment="Left"></ContentControl>
-    </StackPanel>
-    
-    
+        Title="MainWindow" Height="600" Width="1000" Topmost="True">
+    <Grid Width="1000" Height="600">
+        <StackPanel Margin="0,0">
+            <ComboBox x:Name="SelectUserControl" SelectionChanged="NewUserControl" Width="200" HorizontalAlignment="Left"></ComboBox>
+            <ContentControl x:Name="CC1" Grid.Column="1" HorizontalAlignment="Left"></ContentControl>
+        </StackPanel>
+    </Grid>
+
+
 </Window>

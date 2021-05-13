@@ -17,7 +17,7 @@ namespace WpfBindingMethod.ViewModels
 
         public string Name { get; set; }
         public int Index { get; set; }
-        
+
         public MyList(int index, string name)
         {
             Name = name;
@@ -56,7 +56,7 @@ namespace WpfBindingMethod.ViewModels
                 }
                 return _ListBoxSource1;
             }
-           
+
         }
         public ObservableCollection<MyList> _ListBoxSource2 = new ObservableCollection<MyList>();
         public ObservableCollection<MyList> ListBoxSource2
@@ -81,7 +81,7 @@ namespace WpfBindingMethod.ViewModels
             {
                 if (_ListBoxSource3.Count < 1)
                 {
-                    _ListBoxSource3.Add(new MyCheckBox(true,"CB1", CheckChange));
+                    _ListBoxSource3.Add(new MyCheckBox(true, "CB1", CheckChange));
                     _ListBoxSource3.Add(new MyCheckBox(false, "CB2", CheckChange));
                     _ListBoxSource3.Add(new MyCheckBox(true, "CB3", CheckChange));
                     _ListBoxSource3.Add(new MyCheckBox(true, "CB4", CheckChange));
@@ -225,7 +225,7 @@ namespace WpfBindingMethod.ViewModels
             ListBoxSource2.RemoveAt(2);
             ListBoxSource2.Add(new MyList(ListBoxSource2[0].Index, ListBoxSource2[0].Name));
             ListBoxSource2[0] = ListBoxSource2[0];
-            
+
             TestMessage = ListBoxSource3[0].IsChecked.ToString();
 
         }
@@ -239,7 +239,7 @@ namespace WpfBindingMethod.ViewModels
             TestMessage = "state : ";
             foreach (MyCheckBox item in ListBoxSource3)
             {
-               if (item.IsChecked)
+                if (item.IsChecked)
                 {
                     TestMessage += "1";
                 }
@@ -251,12 +251,12 @@ namespace WpfBindingMethod.ViewModels
         }
 
         public CheckBoxListBoxViewModel()
-        {           
+        {
             SelectedIndex = 0;
             Button1Click = new DelegateCommand(_Button1Click, CanButton1Click);
             CheckChange = new DelegateCommand(_CheckChange, CanCheckChange);
             TestMessage = ListBoxSource3[0].IsChecked.ToString();
         }
-        
+
     }
 }

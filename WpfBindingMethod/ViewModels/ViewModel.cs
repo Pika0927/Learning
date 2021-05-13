@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SoraMVVM.Helper;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using SoraMVVM.Helper;
 
 namespace MyNameSpace.ViewModels
 {
@@ -21,7 +21,7 @@ namespace MyNameSpace.ViewModels
         //  Ctrl+k, Ctrl+u  解註解
         //
         #endregion
-            
+
         #region Binding Data
 
         #endregion

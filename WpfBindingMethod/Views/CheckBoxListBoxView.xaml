@@ -8,12 +8,10 @@
              xmlns:vm="clr-namespace:WpfBindingMethod.ViewModels"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              mc:Ignorable="d"
-             
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <vm:CheckBoxListBoxViewModel/>
     </UserControl.DataContext>
-
     <StackPanel Width="350">
         <StackPanel Orientation="Horizontal">
             <CheckBox Content="CB1" IsChecked="{Binding CB1Check}"></CheckBox>
@@ -62,7 +60,6 @@
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </CheckBox>
-                            
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

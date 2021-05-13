@@ -15,7 +15,9 @@ namespace WpfBindingMethod.ViewModels
         public string Item
         {
             get { return _Item; }
-            set { _Item = value;
+            set
+            {
+                _Item = value;
                 OnPropertyChanged();
             }
         }
@@ -44,12 +46,12 @@ namespace WpfBindingMethod.ViewModels
         public ObservableCollection<string> ItemList2
         {
             get
-            {            
+            {
                 return _ItemList2;
             }
         }
-        public List<MyData> _ItemList = new List<MyData>();
-        public List<MyData> ItemList
+        public ObservableCollection<MyData> _ItemList = new ObservableCollection<MyData>();
+        public ObservableCollection<MyData> ItemList
         {
             get
             {
@@ -65,10 +67,13 @@ namespace WpfBindingMethod.ViewModels
 
         public int SelectIndex
         {
-            get {
-               
-                return _SelectIndex; }
-            set {
+            get
+            {
+
+                return _SelectIndex;
+            }
+            set
+            {
                 _SelectIndex = value;
                 OnPropertyChanged();
             }
@@ -78,9 +83,11 @@ namespace WpfBindingMethod.ViewModels
         public string SelectItem
         {
             get { return _SelectItem; }
-            set { _SelectItem = value;
+            set
+            {
+                _SelectItem = value;
                 OnPropertyChanged();
-                Text1 = SelectIndex.ToString()+" : " +SelectItem;
+                Text1 = SelectIndex.ToString() + " : " + SelectItem;
             }
         }
 
@@ -89,7 +96,9 @@ namespace WpfBindingMethod.ViewModels
         public string Text1
         {
             get { return _Text1; }
-            set { _Text1 = value;
+            set
+            {
+                _Text1 = value;
                 OnPropertyChanged();
             }
         }
@@ -134,6 +143,7 @@ namespace WpfBindingMethod.ViewModels
             for (int i = 0; i < 10; i++)
             {
                 ItemList.Add(new MyData(i.ToString()));
+                ItemList2.Add(i.ToString());
             }
             Button1Click = new DelegateCommand(_Button1Click, CanButton1Click);
 

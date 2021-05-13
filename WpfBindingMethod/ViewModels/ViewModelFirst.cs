@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SoraMVVM.Helper;
-using System.Windows.Input;
-using System.Collections.ObjectModel;
-using WpfBindingMethod.Views;
-
 
 namespace WpfBindingMethod.ViewModels
 {
-    public class DelegateCloseButtonViewModel : ViewModelBase
+    class ViewModelFirst : ViewModelBase
     {
         #region Useful word and key
         //Useful Word :
@@ -21,7 +17,7 @@ namespace WpfBindingMethod.ViewModels
         //  Ctrl+k, Ctrl+s  快速範圍陳述式
         //  Ctrl+k, Ctrl+c  註解
         //  Ctrl+k, Ctrl+u  解註解
-        //
+        //  Ctrl+k, Ctrl+d  快速排版
         #endregion
 
         #region Binding Data
@@ -39,51 +35,29 @@ namespace WpfBindingMethod.ViewModels
         #region Use Method, Func<> CanEventName can use CanExecute to replace 
         /*
         public ICommand EventName { get; set; }
-         public void _EventName(object param)
-        {
-          Code
-        }
 
         private bool CanEventName(object param)
         {
             return true;
         }
-       
+        public void _EventName(object param)
+        {
+          Code
+        }
         */
         private bool CanExecute(object param)
         {
             return true;
         }
         #endregion
-        public ICommand CloseWindow { get; set; }
-        public void _CloseWindow(object param)
+        public Views.ViewModelFirstView View = new Views.ViewModelFirstView();
+        public ViewModelFirst()
         {
-            CloseWindowEvent();
+            Text = "ViewModelFirst";
+            View.DataContext = this;
         }
 
         #endregion
-        public delegate void CloseWindowDelegate();
-        public CloseWindowDelegate CloseWindowEvent;
-        public DelegateCloseButtonViewMethod2 View = new DelegateCloseButtonViewMethod2();
-        public DelegateCloseButtonViewModel()
-        {
-            View.DataContext = this;
-            CloseWindow = new DelegateCommand(_CloseWindow, CanExecute);
-
-            //Add null Event
-            CloseWindowEvent = BaseEvent;
-            //or
-            CloseWindowEvent = () =>
-            {
-                return;
-            };
-            Text = "123";
-
-        }
-        private void BaseEvent()
-        {
-            return;
-        }
 
     }
 }
